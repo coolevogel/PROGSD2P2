@@ -36,17 +36,19 @@ if (isset($_POST['submit'])) {
      * <script>alert('Niet beveiligd tegen script-injections')</script>
      */
 
+     // "localhost:3000 says: Niet beveiligd tegen script-injections"
+
     /*
      * OPDRACHT 2:
      * Zorg ervoor dat er geen scripts meer ingevoerd kunnen worden.
      * Hiervoor gebruik je de functie htmlspecialchars().
      * Pas elke ingevoerde variabele waarde aan met de functie htmlspecialchars().
      */
-    $naam = $_POST['naam'];
-    $straat = $_POST['straat'];
-    $huisnummer = $_POST['huisnummer'];
-    $postcode = $_POST['postcode'];
-    $woonplaats = $_POST['woonplaats'];
+    htmlspecialchars($naam = $_POST['naam']);
+    htmlspecialchars($straat = $_POST['straat']);
+    htmlspecialchars($huisnummer = $_POST['huisnummer']);
+    htmlspecialchars($postcode = $_POST['postcode']);
+    htmlspecialchars($woonplaats = $_POST['woonplaats']);
 
     /*
      * OPDRACHT 3:
@@ -57,12 +59,17 @@ if (isset($_POST['submit'])) {
      * Alle andere letters moeten kleine letters zijn
      * Hiervoor gebruik je de functie strtolower()
      */
-    echo
-        $naam, '<br>',
-        $straat, '<br>',
-        $huisnummer, '<br>',
-        $postcode, '<br>',
-        $woonplaats, '<br>';
+    echo "<br>";
+    echo ucfirst (strtolower($naam));
+    echo "<br>";
+    echo ucfirst (strtolower($straat));
+    echo "<br>";
+    echo ucfirst (strtolower($huisnummer));
+    echo "<br>";
+    echo ucfirst (strtolower($postcode));
+    echo "<br>";
+    echo ucfirst (strtolower($woonplaats));
+    echo "<br>";
 
     /*
      * OPDRACHT 5:
@@ -70,7 +77,11 @@ if (isset($_POST['submit'])) {
      * Hiervoor gebruik je de functie is_numeric()
      * Is er geen nummer ingevoerd geef dan een melding dat er een nummer moet worden ingevoerd
      */
+    echo is_numeric($huisnummer);
 
+    if (is_numeric($huisnummer) == ""){
+        echo "<script>alert('huisnummer is geen nummer')</script>";
+    }
 }
 ?>
 
