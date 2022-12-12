@@ -31,11 +31,15 @@ if ($_POST['submit']) {
 
 
     // Controleer of het aantal > 0 is.
-    if ($aantal) { 
+    if ($aantal > 0 || $aantal < 15) { 
 
-        // Maak de berekening van de totaal prijs.
+        // maak de berekening van de totaal prijs
+
+        echo $prijs * $aantal;
 
         // Maak de teksten zoals gevraagd wordt.
+
+
 
     }
 
