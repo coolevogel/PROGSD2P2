@@ -34,5 +34,26 @@
  */
 
 $weekdagen = array(
-    'ma' => 'maandag'
+    'ma' => 'maandag',
+    'di' => 'dinsdag',
+    'wo' => 'woensdag',
+    'do' => 'donderdag',
+    'vr' => 'vrijdag',
+    'za' => 'zaterdag',
+    'zo' => 'zondag'
     );
+
+    foreach($weekdagen as $key => $value) {
+        $weekdagen[$key] = ucfirst($value);
+
+        echo $weekdagen[$key], "<br>";
+}
+
+$omgekeerd = array();
+
+for ($i = 0; $i < count($weekdagen); $i++) {
+    echo $weekdagen[$keys[$i]], '<br>';
+    array_push(array:$omgekeerd, $weekdagen[$keys[$i]]);
+}
+
+print_r($omgekeerd);
