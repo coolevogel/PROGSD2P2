@@ -49,11 +49,13 @@ $weekdagen = array(
         echo $weekdagen[$key], "<br>";
 }
 
+$keys = array_keys($weekdagen);
+
 $omgekeerd = array();
 
-for ($i = 0; $i < count($weekdagen); $i++) {
+for ($i = count($weekdagen) - 1; $i >= 0; $i--) {
     echo $weekdagen[$keys[$i]], '<br>';
-    array_push(array:$omgekeerd, $weekdagen[$keys[$i]]);
+    $omgekeerd = array_merge($omgekeerd, array($keys[$i] => $weekdagen[$keys[$i]]));
 }
 
 print_r($omgekeerd);
